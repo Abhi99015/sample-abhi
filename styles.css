@@ -1,0 +1,335 @@
+/* ============================================================
+   CyberSafe - Enhanced Styles
+   Professional Blue/White Cybersecurity Theme
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  background: linear-gradient(135deg, #0a1a3a 0%, #0f2456 100%);
+  color: #ffffff;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ---------- HEADER & NAVIGATION ---------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: rgba(7, 18, 43, 0.95);
+  border-bottom: 2px solid #2f7bff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: -0.5px;
+  transition: transform 0.2s;
+}
+
+.logo:hover { transform: scale(1.05); }
+
+.nav-container {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-btn {
+  background: transparent;
+  color: #b8d0ff;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.nav-btn:hover {
+  background: rgba(47, 123, 255, 0.15);
+  color: #ffffff;
+}
+
+.nav-btn.active {
+  background: #2f7bff;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ---------- MAIN CONTENT ---------- */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.page {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.page.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hidden { display: none !important; }
+
+.page-title {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.page-sub {
+  color: #a9c3ee;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+  text-align: center;
+  padding: 40px 0 50px;
+}
+
+.shield {
+  font-size: 90px;
+  display: inline-block;
+  animation: pulse 2.5s infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #a9c3ee;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ---------- CARDS ---------- */
+.card-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.big-card {
+  background: linear-gradient(135deg, #12295a 0%, #1a3a7a 100%);
+  border: 1px solid #2f5fa3;
+  border-radius: 14px;
+  padding: 40px 28px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.big-card:hover {
+  transform: translateY(-8px);
+  border-color: #2f7bff;
+  box-shadow: 0 15px 40px rgba(47, 123, 255, 0.35);
+  background: linear-gradient(135deg, #183672 0%, #1e4fa3 100%);
+}
+
+.big-icon {
+  font-size: 56px;
+  margin-bottom: 16px;
+}
+
+.big-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.big-card p {
+  color: #b8d0ff;
+  font-size: 15px;
+}
+
+/* ---------- PANELS ---------- */
+.panel {
+  background: linear-gradient(135deg, #12295a 0%, #0f2555 100%);
+  border: 1px solid #2f5fa3;
+  border-radius: 14px;
+  padding: 32px;
+  margin-bottom: 28px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.panel h2 {
+  margin-bottom: 18px;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.panel h3 {
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.panel h4 {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffb347;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  background: linear-gradient(135deg, #2f7bff, #1f63d8);
+  color: #fff;
+  border: none;
+  padding: 12px 26px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(47, 123, 255, 0.3);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(47, 123, 255, 0.4);
+  background: linear-gradient(135deg, #1f63d8, #1a52b8);
+}
+
+.btn:active { transform: translateY(0); }
+.btn:disabled {
+  background: #44577d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #2f7bff;
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: rgba(47, 123, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(47, 123, 255, 0.2);
+}
+
+.btn-safe {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+}
+
+.btn-safe:hover {
+  box-shadow: 0 6px 18px rgba(46, 204, 113, 0.4);
+}
+
+.btn-scam {
+  background: linear-gradient(135deg, #ff4d4d, #e63946);
+  box-shadow: 0 4px 12px rgba(255, 77, 77, 0.3);
+}
+
+.btn-scam:hover {
+  box-shadow: 0 6px 18px rgba(255, 77, 77, 0.4);
+}
+
+.btn-lg {
+  padding: 16px 40px;
+  font-size: 18px;
+}
+
+.next-wrap {
+  text-align: right;
+  margin-top: 30px;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  text-align: center;
+  padding: 24px;
+  background: rgba(7, 18, 43, 0.8);
+  color: #7a9dd0;
+  border-top: 2px solid #2f5fa3;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media (max-width: 900px) {
+  .header {
+    padding: 12px 20px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-container {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .page-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 20px 12px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .card-row {
+    grid-template-columns: 1fr;
+  }
+
+  .big-card {
+    padding: 28px 16px;
+  }
+
+  .panel {
+    padding: 20px;
+  }
+}

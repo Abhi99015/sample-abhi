@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberSafe - Cyber Safety & Digital Fraud Awareness</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER + NAVIGATION -->
+  <header class="header">
+    <div class="logo" data-page="home">🛡️ CyberSafe</div>
+    <nav class="nav-container">
+      <button class="nav-btn active" data-page="home">Home</button>
+      <button class="nav-btn" data-page="learn">Learn</button>
+      <button class="nav-btn" data-page="checker">Scam Checker</button>
+      <button class="nav-btn" data-page="quiz">Quiz</button>
+      <button class="nav-btn" data-page="tools">Security Tools</button>
+      <button class="nav-btn" data-page="scammed">I've Been Scammed</button>
+      <button class="nav-btn" data-page="mysafety">My Safety</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ========== HOME ========== -->
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="shield">🛡️</div>
+        <h1>Stay Safe. Think Before You Click.</h1>
+        <p>Learn to identify digital fraud, protect your information and stay safe online.</p>
+      </div>
+
+      <div class="card-row">
+        <div class="big-card" data-page="checker">
+          <div class="big-icon">🔍</div>
+          <h3>Check a Scam</h3>
+          <p>Analyze a suspicious message in real-time.</p>
+        </div>
+        <div class="big-card" data-page="learn">
+          <div class="big-icon">📚</div>
+          <h3>Learn Cyber Safety</h3>
+          <p>Understand 12+ types of digital scams.</p>
+        </div>
+        <div class="big-card" data-page="quiz">
+          <div class="big-icon">🎯</div>
+          <h3>Take the Quiz</h3>
+          <p>Test your cybersecurity knowledge.</p>
+        </div>
+      </div>
+
+      <!-- Cyber Safety Dashboard -->
+      <div class="panel dashboard">
+        <h2>📊 Your Cyber Safety Score</h2>
+        <div class="score-display">
+          <div class="score-circle">
+            <div class="score-number" id="overallScore">0</div>
+            <div class="score-label">/ 100</div>
+          </div>
+          <div class="score-breakdown">
+            <div class="score-item">
+              <span>Password Safety</span>
+              <div class="score-bar"><div class="score-fill" id="passwordScoreFill"></div></div>
+              <span id="passwordScorePct">0%</span>
+            </div>
+            <div class="score-item">
+              <span>Phishing Awareness</span>
+              <div class="score-bar"><div class="score-fill" id="phishingScoreFill"></div></div>
+              <span id="phishingScorePct">0%</span>
+            </div>
+            <div class="score-item">
+              <span>UPI Safety</span>
+              <div class="score-bar"><div class="score-fill" id="upiScoreFill"></div></div>
+              <span id="upiScorePct">0%</span>
+            </div>
+            <div class="score-item">
+              <span>Social Media Safety</span>
+              <div class="score-bar"><div class="score-fill" id="socialScoreFill"></div></div>
+              <span id="socialScorePct">0%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Common Scam Red Flags -->
+      <div class="panel">
+        <h2>🚩 Common Scam Red Flags</h2>
+        <div class="red-flags">
+          <div class="flag-item">
+            <div class="flag-icon">1️⃣</div>
+            <div class="flag-text">
+              <strong>Unexpected message</strong>
+              <p>You receive contact from an unknown person or organization.</p>
+            </div>
+          </div>
+          <div class="flag-item">
+            <div class="flag-icon">2️⃣</div>
+            <div class="flag-text">
+              <strong>Urgent or threatening language</strong>
+              <p>"Act now!" "Your account will be closed!" "Confirm immediately!"</p>
+            </div>
+          </div>
+          <div class="flag-item">
+            <div class="flag-icon">3️⃣</div>
+            <div class="flag-text">
+              <strong>Request for OTP/PIN</strong>
+              <p>Never share your One-Time Password or Personal Identification Number.</p>
+            </div>
+          </div>
+          <div class="flag-item">
+            <div class="flag-icon">4️⃣</div>
+            <div class="flag-text">
+              <strong>Request for money</strong>
+              <p>Asking you to pay a fee or transfer money for any reason.</p>
+            </div>
+          </div>
+          <div class="flag-item">
+            <div class="flag-icon">5️⃣</div>
+            <div class="flag-text">
+              <strong>Suspicious link</strong>
+              <p>URL looks different from the official website or shortened links.</p>
+            </div>
+          </div>
+          <div class="flag-item">
+            <div class="flag-icon">6️⃣</div>
+            <div class="flag-text">
+              <strong>Too-good-to-be-true offer</strong>
+              <p>Winning a prize you never entered, unrealistic salary offers.</p>
+            </div>
+          </div>
+          <div class="flag-item">
+            <div class="flag-icon">7️⃣</div>
+            <div class="flag-text">
+              <strong>Unknown sender</strong>
+              <p>Email addresses, phone numbers or profiles don't match official ones.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cyber Safety Tip -->
+      <div class="panel tip-section">
+        <h2>💡 Daily Cyber Safety Tip</h2>
+        <div class="tip-display" id="tipDisplay"></div>
+        <button class="btn" id="nextTipBtn">Get Next Tip →</button>
+      </div>
+
+    </section>
+
+    <!-- ========== LEARN ========== -->
+    <section id="learn" class="page">
+      <h2 class="page-title">📚 Learn About Scams</h2>
+      <p class="page-sub">Search and filter to learn about different types of scams.</p>
+      
+      <div class="learn-controls">
+        <div class="search-box">
+          <input type="text" id="scamSearch" placeholder="🔍 Search scams...">
+        </div>
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="banking">Banking</button>
+          <button class="filter-btn" data-filter="upi">UPI</button>
+          <button class="filter-btn" data-filter="social">Social Media</button>
+          <button class="filter-btn" data-filter="jobs">Jobs</button>
+          <button class="filter-btn" data-filter="phishing">Phishing</button>
+        </div>
+      </div>
+
+      <div id="scamGrid" class="scam-grid"></div>
+      
+      <div class="next-wrap">
+        <button class="btn" data-page="checker">Next: Scam Checker →</button>
+      </div>
+    </section>
+
+    <!-- ========== SCAM CHECKER ========== -->
+    <section id="checker" class="page">
+      <h2 class="page-title">🔍 Scam Risk Checker</h2>
+      <p class="page-sub">Multi-step analysis of suspicious messages.</p>
+
+      <div id="checkerContainer">
+        <!-- STEP 1: Message Type Selection -->
+        <div id="step1" class="checker-step active">
+          <div class="panel">
+            <h3>Step 1: What type of message did you receive?</h3>
+            <div class="message-type-grid">
+              <button class="type-card" data-type="sms">
+                <div class="type-icon">📱</div>
+                <div>SMS</div>
+              </button>
+              <button class="type-card" data-type="whatsapp">
+                <div class="type-icon">💬</div>
+                <div>WhatsApp</div>
+              </button>
+              <button class="type-card" data-type="email">
+                <div class="type-icon">📧</div>
+                <div>Email</div>
+              </button>
+              <button class="type-card" data-type="call">
+                <div class="type-icon">☎️</div>
+                <div>Phone Call</div>
+              </button>
+              <button class="type-card" data-type="upi">
+                <div class="type-icon">💳</div>
+                <div>UPI/Payment</div>
+              </button>
+              <button class="type-card" data-type="social">
+                <div class="type-icon">👥</div>
+                <div>Social Media</div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: Warning Signs Questions -->
+        <div id="step2" class="checker-step hidden">
+          <div class="panel">
+            <h3>Step 2: Check for these warning signs</h3>
+            <div id="warningsList"></div>
+            <div class="step-buttons">
+              <button class="btn btn-outline" id="backStep2Btn">← Back</button>
+              <button class="btn" id="nextStep2Btn">Analyze Risk →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: Risk Result -->
+        <div id="step3" class="checker-step hidden">
+          <div id="checkerResult" class="panel result"></div>
+          <div class="step-buttons">
+            <button class="btn btn-outline" id="resetCheckerBtn">← Start Over</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="next-wrap">
+        <button class="btn" data-page="quiz">Take Quiz →</button>
+      </div>
+    </section>
+
+    <!-- ========== QUIZ ========== -->
+    <section id="quiz" class="page">
+      <h2 class="page-title">🎯 Cyber Safety Quiz</h2>
+      <p class="page-sub">Test your cybersecurity knowledge with 10 questions.</p>
+
+      <div id="quizBox" class="panel quiz-box">
+        <div class="progress-bar"><div id="progressFill"></div></div>
+        <p id="quizCount" class="quiz-count"></p>
+        <h3 id="quizQuestion"></h3>
+        <div id="quizOptions"></div>
+        <div id="quizFeedback" class="quiz-feedback hidden"></div>
+        <button class="btn" id="nextBtn" disabled>Next</button>
+      </div>
+
+      <div id="quizResult" class="panel result hidden">
+        <h2>Quiz Completed 🎉</h2>
+        <p class="score" id="finalScore"></p>
+        <p class="level" id="finalLevel"></p>
+        <p id="finalAdvice" class="quiz-advice"></p>
+        <button class="btn" id="restartBtn">Try Again</button>
+        <button class="btn btn-outline" data-page="home">Back to Home</button>
+      </div>
+
+      <div class="next-wrap">
+        <button class="btn" data-page="tools">Security Tools →</button>
+      </div>
+    </section>
+
+    <!-- ========== SECURITY TOOLS ========== -->
+    <section id="tools" class="page">
+      <h2 class="page-title">🔐 Security Tools</h2>
+      <p class="page-sub">Practical tools to improve your cybersecurity.</p>
+
+      <!-- Password Strength Checker -->
+      <div class="panel tool-panel">
+        <h3>🔑 Password Strength Checker</h3>
+        <p class="tool-subtitle">Check password strength (does not send or store your password)</p>
+        <div class="password-checker">
+          <input type="password" id="passwordInput" placeholder="Enter a sample password...">
+          <button class="btn" id="checkPasswordBtn">Check Strength</button>
+        </div>
+        <div id="passwordResult" class="password-result hidden"></div>
+        <p class="disclaimer">⚠️ Use a sample password. This tool does not send or store any passwords.</p>
+      </div>
+
+      <!-- Cyber Safety Checklist -->
+      <div class="panel tool-panel">
+        <h3>✅ Cyber Safety Checklist</h3>
+        <p class="tool-subtitle">Track your safety habits</p>
+        <div id="checklistContainer" class="checklist"></div>
+        <div class="checklist-progress">
+          <p>Progress: <span id="checklistPct">0%</span> (<span id="checklistCount">0</span>/9 completed)</p>
+          <p>Cyber Safety: <span id="safetyPct">0%</span></p>
+        </div>
+      </div>
+
+      <!-- Cybersecurity Dictionary -->
+      <div class="panel tool-panel">
+        <h3>📖 Cybersecurity Dictionary</h3>
+        <p class="tool-subtitle">Common security terms explained simply</p>
+        <div id="dictionaryContainer" class="dictionary"></div>
+      </div>
+
+      <div class="next-wrap">
+        <button class="btn" data-page="scammed">I've Been Scammed →</button>
+      </div>
+    </section>
+
+    <!-- ========== I'VE BEEN SCAMMED ========== -->
+    <section id="scammed" class="page">
+      <h2 class="page-title">🚨 I've Been Scammed - What Now?</h2>
+      <p class="page-sub">Emergency guide: Step-by-step actions to take immediately.</p>
+
+      <div class="panel emergency-guide">
+        <h3>Do This IMMEDIATELY:</h3>
+        <div class="emergency-steps">
+          <div class="emergency-item urgent">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Stay Calm - Stop Communication</h4>
+              <p>Do not reply to the scammer. Stop all communication immediately.</p>
+            </div>
+          </div>
+          <div class="emergency-item urgent">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>Contact Your Bank (If Money Lost)</h4>
+              <p>Call your bank's customer care using the number on the back of your card. Use official contact numbers only.</p>
+            </div>
+          </div>
+          <div class="emergency-item urgent">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Report the Fraudulent Transaction</h4>
+              <p>Ask your bank to initiate a chargeback or dispute on unauthorized transactions.</p>
+            </div>
+          </div>
+          <div class="emergency-item urgent">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>Preserve Evidence</h4>
+              <p>Keep screenshots, messages, transaction details, and conversation records.</p>
+            </div>
+          </div>
+          <div class="emergency-item important">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h4>Change Your Passwords</h4>
+              <p>If they know any of your account information, change passwords for email, banking, and social media accounts.</p>
+            </div>
+          </div>
+          <div class="emergency-item important">
+            <div class="step-number">6</div>
+            <div class="step-content">
+              <h4>Enable Two-Factor Authentication (2FA)</h4>
+              <p>Immediately enable 2FA on all important accounts (email, bank, UPI apps, social media).</p>
+            </div>
+          </div>
+          <div class="emergency-item important">
+            <div class="step-number">7</div>
+            <div class="step-content">
+              <h4>Block & Report the Scammer</h4>
+              <p>Block the sender on WhatsApp, SMS, email, or social media. Report them to the platform.</p>
+            </div>
+          </div>
+          <div class="emergency-item important">
+            <div class="step-number">8</div>
+            <div class="step-content">
+              <h4>File an Official Complaint</h4>
+              <p>Report to Cybercrime Portal (cybercrime.gov.in in India) or your local law enforcement.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel do-not-section">
+        <h3>❌ Do NOT Do This:</h3>
+        <div class="do-not-list">
+          <div class="do-not-item">
+            <span>❌</span>
+            <p><strong>Don't pay more money</strong> hoping to recover your loss.</p>
+          </div>
+          <div class="do-not-item">
+            <span>❌</span>
+            <p><strong>Don't ignore it</strong> - time is critical for financial recovery.</p>
+          </div>
+          <div class="do-not-item">
+            <span>❌</span>
+            <p><strong>Don't delete evidence</strong> - keep all communications and screenshots.</p>
+          </div>
+          <div class="do-not-item">
+            <span>❌</span>
+            <p><strong>Don't share your experience publicly</strong> in a way that reveals your details.</p>
+          </div>
+          <div class="do-not-item">
+            <span>❌</span>
+            <p><strong>Don't contact unknown recovery services</strong> - they may be scams too.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="next-wrap">
+        <button class="btn" data-page="mysafety">View My Safety Dashboard →</button>
+      </div>
+    </section>
+
+    <!-- ========== MY SAFETY DASHBOARD ========== -->
+    <section id="mysafety" class="page">
+      <h2 class="page-title">🛡️ My Safety Dashboard</h2>
+      <p class="page-sub">Your progress and recommendations based on completed activities.</p>
+
+      <div class="dashboard-grid">
+        <div class="panel dashboard-card">
+          <h3>My Cyber Safety Score</h3>
+          <div class="big-score" id="dashboardScore">0</div>
+          <p class="score-label">/100</p>
+          <p class="score-subtitle" id="scoreRating">Beginner</p>
+        </div>
+
+        <div class="panel dashboard-card">
+          <h3>Quiz Progress</h3>
+          <div class="progress-stat">
+            <div class="progress-bar"><div class="progress-fill" id="quizProgressBar"></div></div>
+            <p><span id="quizPercent">0%</span> Complete</p>
+          </div>
+          <p class="progress-detail" id="quizDetail">0/10 - Not started</p>
+        </div>
+
+        <div class="panel dashboard-card">
+          <h3>Safety Checklist</h3>
+          <div class="progress-stat">
+            <div class="progress-bar"><div class="progress-fill" id="checklistProgressBar"></div></div>
+            <p><span id="checklistPercent">0%</span> Complete</p>
+          </div>
+          <p class="progress-detail" id="checklistDetail">0/9 - Start checking items</p>
+        </div>
+
+        <div class="panel dashboard-card">
+          <h3>Learning Progress</h3>
+          <div class="progress-stat">
+            <div class="progress-bar"><div class="progress-fill" id="learningProgressBar"></div></div>
+            <p><span id="learningPercent">0%</span> Complete</p>
+          </div>
+          <p class="progress-detail" id="learningDetail">0/12 - Explore scam types</p>
+        </div>
+      </div>
+
+      <div class="panel recommendations-panel">
+        <h3>💡 Recommendations for You</h3>
+        <div id="recommendationsContainer" class="recommendations">
+          <p>Complete activities to see personalized recommendations.</p>
+        </div>
+      </div>
+
+      <div class="next-wrap">
+        <button class="btn btn-outline" id="clearDataBtn">Clear All Data</button>
+        <button class="btn" data-page="home">Back to Home</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    🛡️ CyberSafe — Cyber Safety & Digital Fraud Awareness | Educational Tool | College Mini Project
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
